@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Searcher from "./components/Searcher";
+import Button from "./components/Button";
 
 function App() {
   const CLIENT_ID = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
@@ -34,22 +35,23 @@ function App() {
   return (
     <div className="App flex justify-center items-center h-screen">
       <header className="App-header">
-        <div className="SearchContainer">
-          <h1 className="text-6xl text-aqua font-bold">Spotify player</h1>
+        <div className="SearchContainer justify-center">
+          <h1 className="text-4xl sm:text-6xl text-aqua font-bold flex justify-center items-center">Spotify player</h1>
           {!token ? (
-            <div className="flex text-center">
+            <div className="flex justify-center p-20">
               <a
                 href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
+                className="bg-aqua py-2 px-4 rounded-md font-semibold whitespace-nowrap"
               >
-                Login to Spotify
+                Login to to your Spotify account
               </a>
             </div>
           ) : (
-            <div>
+            <div className="">
               <Searcher token={token} />
-              <button className="logOut" onClick={logout}>
+              <Button className="logOut bg-aqua" onClick={logout}>
                 Logout
-              </button>
+              </Button>
             </div>
           )}
         </div>
