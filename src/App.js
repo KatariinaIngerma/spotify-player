@@ -1,4 +1,3 @@
-import "./App.css";
 import React, { useState, useEffect } from "react";
 import Searcher from "./components/Searcher";
 
@@ -9,7 +8,6 @@ function App() {
   const RESPONSE_TYPE = process.env.REACT_APP_SPOTIFY_RESPONSE_TYPE;
   const [token, setToken] = useState("");
 
-  console.log(CLIENT_ID); 
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -34,12 +32,12 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App flex justify-center items-center h-screen">
       <header className="App-header">
         <div className="SearchContainer">
-          <h2>Searchly</h2>
+          <h1 className="text-6xl text-aqua font-bold">Spotify player</h1>
           {!token ? (
-            <div>
+            <div className="flex text-center">
               <a
                 href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
               >
