@@ -36,12 +36,12 @@ function App() {
     <div className="App flex justify-center items-center h-screen">
       <header className="App-header">
         <div className="SearchContainer justify-center">
-          <h1 className="text-4xl sm:text-6xl text-aqua font-bold flex justify-center items-center">Spotify player</h1>
+          <h1 className="text-5xl sm:text-6xl text-aqua font-bold flex justify-center items-center">Spotify player</h1>
           {!token ? (
-            <div className="flex justify-center p-20">
+            <div className="flex justify-center py-20">
               <a
                 href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}
-                className="bg-aqua py-2 px-4 rounded-md font-semibold whitespace-nowrap"
+                className="bg-aqua py-2 px-4 rounded-md font-semibold"
               >
                 Login to to your Spotify account
               </a>
