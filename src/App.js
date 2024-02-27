@@ -9,7 +9,7 @@ function App() {
   const RESPONSE_TYPE = process.env.REACT_APP_SPOTIFY_RESPONSE_TYPE;
   const [token, setToken] = useState("");
 
-  console.log(CLIENT_ID);
+  console.log(CLIENT_ID); 
 
   useEffect(() => {
     const hash = window.location.hash;
